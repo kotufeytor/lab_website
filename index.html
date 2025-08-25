@@ -3,118 +3,436 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab Mariny</title>
+    <meta name="description" content="Laboratorio Clínico Mariny - Análisis clínicos confiables con resultados online seguros">
+    <meta name="keywords" content="laboratorio clínico, análisis médicos, hemograma, glucosa, colesterol, Maracay">
+    <title>Laboratorio Clínico Mariny - Análisis Médicos Confiables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-dark: #004499;
+            --secondary-color: #00a86b;
+            --accent-color: #ff6b35;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
+        
         body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-dark);
+            background-color: var(--white);
         }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
         header {
-            background: #007bff;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
-            padding: 1rem;
-            text-align: center;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        nav {
-            background: #f4f4f4;
-            padding: 1rem;
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo::before {
+            content: "🧪";
+            font-size: 1.8rem;
+        }
+        
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            gap: 2rem;
         }
-        nav ul li {
-            margin: 0 1rem;
-        }
+        
         nav ul li a {
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
         }
+        
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
         .hero {
-            background: url('https://via.placeholder.com/1200x400') no-repeat center/cover;
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(0,102,204,0.9), rgba(0,168,107,0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f8ff" width="1200" height="400"/><circle fill="%23e6f3ff" cx="200" cy="100" r="50" opacity="0.5"/><circle fill="%23cce7ff" cx="800" cy="300" r="80" opacity="0.3"/><circle fill="%23b3daff" cx="1000" cy="150" r="60" opacity="0.4"/></svg>') center/cover;
+            padding: 6rem 0;
             text-align: center;
             color: white;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .hero a {
-            background: #007bff;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section h2 {
-            margin-bottom: 1rem;
-            color: #007bff;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
             position: relative;
-            bottom: 0;
-            width: 100%;
         }
+        
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .cta-button:hover,
+        .cta-button:focus {
+            background: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .section p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .service-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .contact-item .icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
         @media (max-width: 768px) {
-            nav ul {
+            .header-content {
                 flex-direction: column;
-                align-items: center;
+                gap: 1rem;
             }
-            nav ul li {
-                margin: 0.5rem 0;
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
             }
-            .hero h1 {
-                font-size: 1.8rem;
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Laboratorio Clínico Mariny</h1>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Laboratorio Clínico Mariny</div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+
     <section class="hero" id="inicio">
-        <h1>Bienvenidos al Laboratorio Clínico Mariny</h1>
-        <p>Resultados confiables para su salud</p>
-        <a href="https://sistema.labmariny.com">Acceder al Sistema</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bienvenidos al Laboratorio Clínico Mariny</h1>
+                <p>Resultados confiables y precisos para cuidar tu salud con la mejor tecnología</p>
+                <a href="https://sistema.labmariny.com" class="cta-button">🔐 Acceder al Sistema</a>
+            </div>
+        </div>
     </section>
+
     <section class="section" id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <p>Ofrecemos análisis clínicos de alta calidad, incluyendo hemogramas, glucosa, colesterol, y más. Nuestro sistema permite a pacientes y médicos acceder a resultados de forma segura y descargar informes en PDF.</p>
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p>Ofrecemos análisis clínicos de alta calidad con tecnología de vanguardia. Nuestro sistema digital permite a pacientes y médicos acceder a resultados de forma segura.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">🩸</div>
+                    <h3>Hematología</h3>
+                    <p>Hemogramas completos, conteo de células sanguíneas y estudios especializados de sangre.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🧬</div>
+                    <h3>Bioquímica</h3>
+                    <p>Análisis de glucosa, colesterol, triglicéridos, función hepática y renal.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🦠</div>
+                    <h3>Microbiología</h3>
+                    <p>Cultivos, antibiogramas y detección de microorganismos patógenos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">💉</div>
+                    <h3>Inmunología</h3>
+                    <p>Pruebas de alergias, marcadores tumorales y estudios inmunológicos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📱</div>
+                    <h3>Resultados Online</h3>
+                    <p>Acceso seguro a resultados 24/7 con descarga de informes en PDF.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">⚡</div>
+                    <h3>Resultados Rápidos</h3>
+                    <p>Procesamiento express para casos urgentes con entrega el mismo día.</p>
+                </div>
+            </div>
+        </div>
     </section>
+
     <section class="section" id="contacto">
-        <h2>Contacto</h2>
-        <p>Email: info@labmariny.com</p>
-        <p>Teléfono: (123) 456-7890</p>
-        <p>Dirección: CCC. Maracay Plaza, Aragua</p>
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Estamos aquí para atenderte. Contáctanos por cualquiera de estos medios.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <h3>Email</h3>
+                    <p>info@labmariny.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <h3>Teléfono</h3>
+                    <p>(123) 456-7890</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <h3>Dirección</h3>
+                    <p>CCC. Maracay Plaza<br>Aragua, Venezuela</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🕒</div>
+                    <h3>Horarios</h3>
+                    <p>Lun-Vie: 7:00-17:00<br>Sáb: 7:00-12:00</p>
+                </div>
+            </div>
+        </div>
     </section>
+
     <footer>
-        <p>&copy; 2025 Laboratorio Clínico Mariny. Todos los derechos reservados.</p>
+        <div class="container">
+            <p>&copy; 2025 Laboratorio Clínico Mariny. Todos los derechos reservados.</p>
+            <p>Comprometidos con la excelencia en diagnósticos médicos</p>
+        </div>
     </footer>
+
+    <a href="#inicio" class="scroll-to-top" id="scrollToTop">↑</a>
+
+    <script>
+        // Smooth scrolling para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mostrar/ocultar botón de scroll to top
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Animación de entrada para las tarjetas de servicios
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animación a las tarjetas
+        document.querySelectorAll('.service-card, .contact-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
