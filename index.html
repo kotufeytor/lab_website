@@ -286,13 +286,14 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">Laboratorio Bioclínico Mariny</div>
-                <nav>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </nav>
+                    <nav>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#faq">Preguntas</a></li> 
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </nav>
             </div>
         </div>
     </header>
@@ -397,17 +398,31 @@
             </div>
         </div>
     </section>
-    <section class="section" style="background: var(--bg-light);">
+<section class="section" id="faq" style="background: var(--bg-light);">
     <div class="container">
-        <h2 style="text-align: center;">Preguntas Frecuentes</h2>
-        <div style="max-width: 800px; margin: 2rem auto;">
-            <details style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px;">
-                <summary style="font-weight: 600; cursor: pointer;">¿Necesito cita previa?</summary>
-                <p style="margin-top: 1rem;">No, atendemos por orden de llegada en ambas sedes.</p>
+        <h2>Preguntas Frecuentes</h2>
+        <p>Resolvemos tus dudas antes de visitarnos.</p>
+        
+        <div style="max-width: 800px; margin: 2rem auto; text-align: left;">
+            <details style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-color);">¿Cuáles son los métodos de pago?</summary>
+                <div style="padding-top: 1rem; color: var(--text-dark);">
+                    Aceptamos Bolívares (Pago Móvil, Transferencia), Divisas en efectivo, Zelle y tarjetas de débito/crédito.
+                </div>
             </details>
-            <details style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px;">
-                <summary style="font-weight: 600; cursor: pointer;">¿Cuánto tardan los resultados?</summary>
-                <p style="margin-top: 1rem;">La mayoría de los exámenes de rutina están listos el mismo día.</p>
+
+            <details style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-color);">¿Debo ir en ayunas?</summary>
+                <div style="padding-top: 1rem; color: var(--text-dark);">
+                    Para la mayoría de los perfiles (Glucosa, Colesterol, Triglicéridos) se requiere un ayuno de 8 a 12 horas. Consúltanos por WhatsApp si tienes dudas sobre un examen específico.
+                </div>
+            </details>
+
+            <details style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-color);">¿Cómo recibo mis resultados?</summary>
+                <div style="padding-top: 1rem; color: var(--text-dark);">
+                    Puedes descargarlos directamente desde nuestro sistema online con el número de protocolo que te entregaremos al momento de la toma de muestra.
+                </div>
             </details>
         </div>
     </div>
