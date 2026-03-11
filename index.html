@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0066cc;
-            --primary-dark: #004499;
+            --primary-color: #ffffff;
+            --primary-dark: #2259d2;
             --secondary-color: #00a86b;
             --accent-color: #ff6b35;
             --text-dark: #2c3e50;
@@ -66,10 +66,10 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            color: rgb(49, 109, 200);
         }
         
         .logo::before {
-            content: "🧪";
             font-size: 1.8rem;
         }
         
@@ -148,7 +148,7 @@
             font-size: 2.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: var(--primary-dark);
             text-align: center;
         }
         
@@ -188,7 +188,7 @@
         }
         
         .service-card h3 {
-            color: var(--primary-color);
+            color: var(--primary-dark);
             margin-bottom: 1rem;
             font-weight: 600;
         }
@@ -215,7 +215,7 @@
         }
         
         .contact-item h3 {
-            color: var(--primary-color);
+            color: var(--primary-dark);
             margin-bottom: 0.5rem;
         }
         
@@ -302,7 +302,7 @@
             summary::after {
                 content: "＋"; /* Icono de suma */
                 font-size: 1.2rem;
-                color: var(--primary-color);
+                color: var(--primary-dark);
                 transition: transform 0.3s ease;
             }
 
@@ -320,7 +320,9 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">Laboratorio Bioclínico Mariny</div>
+                <div class="logo">
+                    <img src="assets/logo-mariny.webp" alt="Laboratorio Bioclínico Mariny" style="height: 50px; width: auto;">
+                    Laboratorio Bioclínico Mariny</div>
                     <nav>
                         <ul>
                             <li><a href="#inicio">Inicio</a></li>
@@ -403,7 +405,7 @@
                     </div>
                     
                     <div>
-                        <span style="display: block; font-weight: 600; color: var(--primary-color);">Teléfono Fijo</span>
+                        <span style="display: block; font-weight: 600; color: var(--primary-dark);">Teléfono Fijo</span>
                         <p>☎️ 0243-236.49.66</p>
                     </div>
                 </div>
@@ -422,7 +424,7 @@
                     </div>
                     
                     <div>
-                        <span style="display: block; font-weight: 600; color: var(--primary-color);">Horarios Generales</span>
+                        <span style="display: block; font-weight: 600; color: var(--primary-dark);">Horarios Generales</span>
                         <p>Lun-Vie: 7:00 a.m - 3:00 p.m<br>Sáb: 8:00 a.m - 12:00 p.m</p>
                     </div>
                 </div>
@@ -440,21 +442,21 @@
         
         <div style="max-width: 800px; margin: 2rem auto; text-align: left;">
             <details style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-color);">¿Cuáles son los métodos de pago?</summary>
+                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-dark);">¿Cuáles son los métodos de pago?</summary>
                 <div style="padding-top: 1rem; color: var(--text-dark);">
                     Aceptamos Bolívares (Pago Móvil, Transferencia), Divisas en efectivo, Zelle y tarjetas de débito/crédito.
                 </div>
             </details>
 
             <details style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-color);">¿Debo ir en ayunas?</summary>
+                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-dark);">¿Debo ir en ayunas?</summary>
                 <div style="padding-top: 1rem; color: var(--text-dark);">
                     Para la mayoría de los perfiles (Glucosa, Colesterol, Triglicéridos) se requiere un ayuno de 8 a 12 horas. Consúltanos por WhatsApp si tienes dudas sobre un examen específico.
                 </div>
             </details>
 
             <details style="margin-bottom: 1rem; padding: 1rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow);">
-                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-color);">¿Cómo recibo mis resultados?</summary>
+                <summary style="font-weight: 600; cursor: pointer; color: var(--primary-dark);">¿Cómo recibo mis resultados?</summary>
                 <div style="padding-top: 1rem; color: var(--text-dark);">
                     Puedes descargarlos directamente desde nuestro sistema online con el número de protocolo que te entregaremos al momento de la toma de muestra.
                 </div>
