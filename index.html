@@ -279,6 +279,41 @@
                 grid-template-columns: 1fr;
             }
         }
+
+                    /* Estilos para las FAQ */
+            details {
+                transition: var(--transition);
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+
+            details[open] {
+                box-shadow: var(--shadow-hover);
+                border-color: var(--secondary-color);
+            }
+
+            summary {
+                list-style: none; /* Quita la flechita por defecto en algunos navegadores */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.5rem 0;
+            }
+
+            summary::after {
+                content: "＋"; /* Icono de suma */
+                font-size: 1.2rem;
+                color: var(--primary-color);
+                transition: transform 0.3s ease;
+            }
+
+            details[open] summary::after {
+                transform: rotate(45deg); /* Se convierte en una X al abrir */
+                color: var(--accent-color);
+            }
+
+            summary:hover {
+                color: var(--primary-dark);
+            }
     </style>
 </head>
 <body>
@@ -290,7 +325,7 @@
                         <ul>
                             <li><a href="#inicio">Inicio</a></li>
                             <li><a href="#servicios">Servicios</a></li>
-                            <li><a href="#faq">Preguntas</a></li> 
+                            <li><a href="#faq" class="nav-link">Preguntas</a></li>
                             <li><a href="#contacto">Contacto</a></li>
                         </ul>
                     </nav>
